@@ -1,0 +1,185 @@
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+  /*  ensures that the width you specify includes the padding and border, rather than adding them on top of the specified width. This can make layout calculations simpler and more intuitive, especially when dealing with responsive designs.
+ */
+  box-sizing: border-box; 
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+
+  /* background-color: #60a9ff;: This sets the background color of the body to a shade of blue (#60a9ff).
+
+display: flex;: This CSS property sets the display mode of the body to flexbox. Flexbox is a layout model that allows elements within a container to be dynamically arranged and aligned.
+
+justify-content: center;: With flexbox, this property aligns the flex items (child elements) along the main axis (horizontal axis in this case) and centers them horizontally within the body.
+
+align-items: center;: This property aligns the flex items along the cross axis (vertical axis in this case) and centers them vertically within the body.
+
+min-height: 100vh;: This sets the minimum height of the body to 100% of the viewport height (vh). This ensures that the body takes up at least the full height of the viewport, even if its content is not large enough to fill it. */
+  background-color: #60a9ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+.panel {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 25px;
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  /* This property sets the direction of the main axis in the flex container to be vertical, meaning the flex items (child elements) will be stacked vertically rather than horizontally. This is useful for creating columnar layouts where elements are placed one on top of the other. */
+  text-align: center;
+  /* This property horizontally aligns the text content of the body (and its children) to the center within their respective containers. In this case, since the body is a flex container with flex-direction: column;, the text content will be centered along the vertical axis. */
+  text-transform: uppercase;
+  /* This property transforms the text content of the body (and its children) to uppercase. This means all text will be displayed in uppercase letters regardless of how it's typed in the HTML. */
+}
+
+.pricing-plan {
+  /* gives border after every div container */
+  border-bottom: 1px solid #e1f1ff;
+}
+
+/* since we dont need border in last panel so set it as none */
+.pricing-plan:last-child {
+  border-bottom: none;
+}
+
+/* setting margin and width of each image */
+.pricing-img {
+  margin-bottom: 25px;
+  max-width: 100%;
+}
+
+.pricing-header {
+  color: #888;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.pricing-features {
+  /* setting margin on top bottom but not on sides */
+  margin: 50px 0 25px; 
+  color: #016ff9;
+}
+
+.pricing-features-item {
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 15px 0;
+  border-top: 1px solid #e1f1ff;
+} 
+
+.pricing-features-item:last-child{
+  border-bottom: 1px solid #e1f1ff;
+}
+
+/* span  */
+.pricing-price {
+  color: #016ff9; 
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.pricing-button {
+  border: 1px solid #9dd1ff;
+  border-radius: 10px;
+  color: #348efe;
+  display: inline-block;
+  /* This property changes the display behavior of the body element to inline-block. This means the body will be treated as an inline-level block container. It will behave like an inline element (it will flow inline with other elements) while allowing other elements to be displayed beside it. However, it also retains the block properties, allowing you to set width, height, padding, and margin. In this case, since display: flex; is also applied, display: inline-block; might not have a significant effect because display: flex; overrides it. */
+  padding: 15px 35px;
+  text-decoration: none;
+  margin: 25px 0;
+  transition: background-color 200ms ease-in-out;
+}
+
+.pricing-button:hover, .pricing-button:focus {
+  background-color: #e1f1ff;
+  /* changing color on */
+}
+
+.pricing-button.is-featured {
+  background-color: #48aaff;
+  color: white;
+}
+
+.pricing-button.is-featured:hover, .pricing-button.is-featured:focus{
+  background-color: #e1f1ff;
+  color: rgb(140, 159, 236);
+}
+
+@media (min-width: 900px){
+  .panel {
+    flex-direction: row;
+  }
+  .pricing-plan {
+    border-bottom: none;
+    /* removing bottom border for different devices */
+    border-right: 1px solid #e1f1ff;
+    padding: 25px 50px;
+  }
+  .pricing-plan:last-child {
+    border-right: none;
+  }
+}
+
+/* @media (min-width: 900px) { ... }: This is a media query that applies the enclosed styles only when the minimum width of the viewport is 900 pixels or more.
+
+.panel { flex-direction: row; }: This rule sets the flex-direction property of elements with the class "panel" to "row". This means that the flex items inside these elements will be laid out in a row instead of the default column layout. This change might be useful for adjusting the layout of panels or sections when the viewport is wide enough.
+
+.pricing-plan { ... }: This rule applies styles to elements with the class "pricing-plan" when the viewport width is at least 900 pixels. It removes the bottom border, adds a right border to create a visual separation between pricing plans, and adjusts the padding to provide spacing between the content and the borders.
+
+.pricing-plan:last-child { border-right: none; }: This rule targets the last child element with the class "pricing-plan" and removes the right border. This ensures that the last pricing plan doesn't have a right border, creating a visually consistent layout. */
